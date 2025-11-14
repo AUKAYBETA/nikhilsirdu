@@ -141,6 +141,71 @@ button.send:disabled{opacity:.55;cursor:not-allowed}
   padding:8px 14px;border-radius:8px;font-weight:600;cursor:pointer;
 }
 .close{position:absolute;top:10px;right:14px;font-size:20px;cursor:pointer;color:var(--muted)}
+/* TYPING INDICATOR */
+.typing {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.typing span {
+  width: 8px;
+  height: 8px;
+  background: var(--acc);
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink 1.4s infinite both;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0% { opacity: .2; transform: translateY(0); }
+  20% { opacity: 1; transform: translateY(-3px); }
+  100% { opacity: .2; transform: translateY(0); }
+}
+/* REAL WhatsApp/Instagram typing bubble INSIDE CHAT */
+.msg.typingbubble {
+  background: var(--sir);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 14px;
+  max-width: 70%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.typing-dots span {
+  width: 8px;
+  height: 8px;
+  background: var(--acc);
+  border-radius: 50%;
+  animation: typingBounce 1.3s infinite ease-in-out;
+  opacity: .35;
+}
+
+.typing-dots span:nth-child(2) { animation-delay: .15s; }
+.typing-dots span:nth-child(3) { animation-delay: .30s; }
+
+@keyframes typingBounce {
+  0%   { transform: translateY(0); opacity: .3; }
+  30%  { transform: translateY(-4px); opacity: 1; }
+  60%  { transform: translateY(0); opacity: .3; }
+  100% { transform: translateY(0); opacity: .3; }
+}
 
 </style>
 </head>
@@ -163,7 +228,7 @@ button.send:disabled{opacity:.55;cursor:not-allowed}
           <div class="name">Nikhil Sir</div>
           <span id="status" class="badge">Online</span>
         </div>
-        <div class="sub">Okayyy bacha — notebookss ready?</div>
+        <div class="sub">Okayyy bacha — knotbookss ready?</div>
       </div>
     </header>
 
@@ -176,6 +241,12 @@ button.send:disabled{opacity:.55;cursor:not-allowed}
       </div>
 
       <div id="msgs" class="msgs"></div>
+      <div id="typingIndicator" class="msg sir" style="display:none;">
+  <div class="typing">
+    <span></span><span></span><span></span>
+  </div>
+</div>
+
     </main>
 
     <!-- FOOTER -->
@@ -211,4 +282,3 @@ button.send:disabled{opacity:.55;cursor:not-allowed}
 
 </body>
 </html>
-
