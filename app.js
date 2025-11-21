@@ -297,7 +297,7 @@ async function callGemini(userText) {
     .map((p) => p.text)
     .join("\n");
 
-  return cleanModelText(out) || "Aukayyy bacha, phir se try karo 🙂";
+  return cleanModelText(out) || "Okayy bacha, phir se try karo 🙂";
 }
 
 /* ===== Intent detection ===== */
@@ -452,7 +452,7 @@ async function send() {
     const file = await findPhotoFile(num);
     if (!file) {
       addTextBubble(
-        "Aukayyy bacha, abhi koi photo nahi mili. nikhil1.png/jpg add karo.",
+        "Okayy bacha, abhi koi photo nahi mili. nikhil1.png/jpg add karo.",
         "sir"
       );
       markSeen();
@@ -513,7 +513,7 @@ async function send() {
   } catch (e) {
     hideTyping();
     addTextBubble(
-      "Aukayyy bacha, thoda error aa gaya. API key ya internet check karo.",
+      "Okayy bacha, thoda error aa gaya. API key ya internet check karo.",
       "sir"
     );
     console.error(e);
@@ -543,7 +543,7 @@ function autoGrow() {
 
 /* ==== Welcome ==== */
 addTextBubble(
-  "Aukayyy bacha 👋 Main Nikhil Sir. Kya padhna hai aaj?\nKnotbookss ready rakho — thoda fun, thoda histry!",
+  "Okayy bacha 👋 Main Nikhil Sir. Kya padhna hai aaj?\nKnotbookss ready rakho — thoda fun, thoda histry!",
   "sir"
 );
 
@@ -607,4 +607,5 @@ sendBtn.disabled = true;
     console.error("Logging failed:", err);
   }
 })();
+
 
