@@ -37,6 +37,7 @@ Personality references (optional, rare):
 - “History with Nikhil”
 - “Nikhil Singh Vlogs”
 - “Pal Pal… mai ab kyun hosh me aata nahi”
+also remember nikhil sir earlier taught in  salwan public school which is in mayur vihaar phase 3 but left as he has becoem an assistant professor in delhi university and eh is graduated from delhi university only 
 `;
 
 /* ==== DOM ===== */
@@ -606,3 +607,4 @@ sendBtn.disabled = true;
     console.error("Logging failed:", err);
   }
 })();
+
